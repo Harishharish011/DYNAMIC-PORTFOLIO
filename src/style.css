@@ -1,0 +1,5 @@
+@import "./styles/globals.css";
+@import "./components/ui/service-state.css";
+
+/* Design foundation entrypoint.
+   All tokens, base reset, and system utilities live in src/styles/*.css. */

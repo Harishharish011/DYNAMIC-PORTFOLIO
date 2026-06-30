@@ -1,0 +1,207 @@
+@import "./theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ Base Reset ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+/* Preserve link affordance without visual clutter */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Smoothness defaults (actual Lenis will be wired in Phase 1/2 later) */
+html {
+  scroll-behavior: auto;
+}
+
+/* ============ Scrollbar styling ============ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.45) transparent;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.35);
+  border-radius: 999px;
+  border: 2px solid rgba(5, 8, 22, 0.6);
+}
+
+/* ============ Font loading ============ */
+/* Inter should be included by HTML later (kept as a foundation utility only). */
+:root {
+  color-scheme: dark;
+}
+
+/* ============ Design System Utilities ============ */
+@layer utilities {
+  /* Glow utilities */
+  .glow-purple-small {
+    box-shadow: var(--glow-purple-small);
+  }
+  .glow-purple-medium {
+    box-shadow: var(--glow-purple-medium);
+  }
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+  .glow-cosmic {
+    box-shadow: var(--glow-cosmic);
+  }
+
+  /* Glassmorphism surfaces */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-edge {
+    position: relative;
+  }
+  .glass-edge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--glass-edge), rgba(59, 130, 246, 0.25));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.75;
+  }
+
+  /* Button system (system-only styles, no behavior/JS) */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition:
+      transform var(--motion-normal) cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow var(--motion-normal) cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      background var(--motion-normal) cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color var(--motion-normal) cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      color var(--motion-normal) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    user-select: none;
+    outline: none;
+    line-height: 1;
+  }
+
+  .btn:focus-visible {
+    box-shadow:
+      0 0 0 3px rgba(147, 51, 234, 0.25),
+      var(--glow-purple-small);
+  }
+
+  .btn-primary {
+    background: rgba(147, 51, 234, 0.18);
+    border: 1px solid rgba(147, 51, 234, 0.40);
+    color: var(--color-text-primary);
+  }
+  .btn-primary:hover {
+    background: rgba(147, 51, 234, 0.25);
+    box-shadow: var(--glow-purple-small);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.28);
+    color: var(--color-text-primary);
+  }
+  .btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.18);
+    box-shadow: var(--glow-blue);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    color: var(--color-text-primary);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: var(--glow-purple-small);
+    transform: translateY(-1px);
+  }
+
+  /* Card standards */
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .card-glass {
+    @apply glass-card;
+  }
+
+  .card-interactive {
+    transition: transform var(--motion-normal) ease, box-shadow var(--motion-normal) ease;
+  }
+  .card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glass), var(--glow-purple-small);
+  }
+}
+
+/* ============ Utility layers for typography ============ */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* Default text smoothing */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

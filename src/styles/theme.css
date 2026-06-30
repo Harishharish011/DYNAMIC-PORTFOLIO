@@ -1,0 +1,78 @@
+/* Design tokens: semantic color variables (source of truth) */
+:root {
+  /* Background */
+  --color-background: #050816;
+  --color-background-deep: #0B1120;
+  --color-background-surface: #111827;
+
+  /* Purple */
+  --color-primary-purple: #9333EA;
+  --color-secondary-purple: #6D28D9;
+
+  /* Blue */
+  --color-accent-blue: #3B82F6;
+  --color-accent-blue-soft: #60A5FA;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94A3B8; /* slate-ish */
+  --color-text-muted: rgba(148, 163, 184, 0.75);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-edge: rgba(147, 51, 234, 0.45);
+
+  /* Opacity helpers */
+  --glass-opacity-low: 0.55;
+  --glass-opacity-medium: 0.72;
+  --glass-opacity-high: 0.88;
+
+  /* Radii */
+  --radius-sm: 14px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  /* Motion tokens (standards) */
+  --motion-fast: 180ms;
+  --motion-normal: 260ms;
+  --motion-slow: 520ms;
+
+  /* Glow */
+  --glow-purple-small: 0 0 18px rgba(147, 51, 234, 0.32);
+  --glow-purple-medium: 0 0 30px rgba(147, 51, 234, 0.35), 0 0 60px rgba(59, 130, 246, 0.20);
+  --glow-blue: 0 0 22px rgba(59, 130, 246, 0.30), 0 0 60px rgba(96, 165, 250, 0.18);
+  --glow-cosmic: 0 0 28px rgba(147, 51, 234, 0.30), 0 0 80px rgba(59, 130, 246, 0.12);
+
+  /* Shadows (cards/panels) */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.30);
+  --shadow-glass: 0 8px 22px rgba(0, 0, 0, 0.35);
+
+  /* Spacing scale (design tokens) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 36px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+
+  /* Container + section */
+  --container-max: 1120px;
+  --section-y: var(--space-10);
+  --section-y-mobile: var(--space-8);
+
+  /* Border & rings */
+  --ring: rgba(147, 51, 234, 0.35);
+  --ring-strong: rgba(59, 130, 246, 0.35);
+}
+
+[data-theme="dark"] {
+  /* reserved for future theme switching */
+}

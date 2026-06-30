@@ -1,0 +1,224 @@
+.bbNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  pointer-events: none;
+  transition: background 360ms ease, border-color 360ms ease, box-shadow 360ms ease,
+    backdrop-filter 360ms ease, opacity 240ms ease;
+}
+
+.bbNav.isTransparent {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0px);
+  box-shadow: none;
+  opacity: 0.95;
+}
+
+.bbNav.isGlass {
+  pointer-events: auto;
+  background: rgba(10, 16, 35, 0.24);
+  border-bottom: 1px solid rgba(147, 51, 234, 0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
+  opacity: 1;
+}
+
+.bbNavInner {
+  max-width: 1200px;
+  padding: 14px 20px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bbLogo {
+  pointer-events: auto;
+  position: relative;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bbLogoGlow {
+  position: absolute;
+  inset: -14px -28px;
+  background: radial-gradient(circle at 28% 32%, rgba(147, 51, 234, 0.38), transparent 62%),
+    radial-gradient(circle at 62% 54%, rgba(59, 130, 246, 0.28), transparent 58%);
+  filter: blur(16px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.bbLogoText {
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(90deg, #9333ea 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 22px rgba(147, 51, 234, 0.2);
+}
+
+.bbDesktopLinks {
+  pointer-events: auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.bbNavLink {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  outline: none;
+}
+
+.bbNavLinkUnderline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 9999px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(147, 51, 234, 0.95), rgba(59, 130, 246, 0.95));
+}
+
+.bbNavLink:hover .bbNavLinkUnderline {
+  transform: scaleX(1);
+}
+
+.bbNavLinkUnderline {
+  transform: scaleX(0);
+  transition: transform 260ms ease;
+}
+
+.bbNavLink.isActive {
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow: 0 0 26px rgba(147, 51, 234, 0.22);
+}
+
+.bbNavLink.isActive .bbNavLinkUnderline {
+  transform: scaleX(1);
+}
+
+.bbMobileToggle {
+  pointer-events: auto;
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 10px;
+}
+
+.bbHamburger {
+  width: 22px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bbHamburger span {
+  height: 2px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.92);
+  transition: transform 220ms ease, opacity 180ms ease;
+}
+
+.bbHamburger.isOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.bbHamburger.isOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.bbHamburger.isOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.bbMobileMenu {
+  position: fixed;
+  top: 58px;
+  left: 12px;
+  right: 12px;
+  z-index: 65;
+  pointer-events: auto;
+}
+
+.bbMobileMenuInner {
+  background: rgba(10, 16, 35, 0.34);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(147, 51, 234, 0.18);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.bbMobileLink {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+  padding: 12px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bbMobileLinkText {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.bbMobileLinkUnderline {
+  height: 2px;
+  width: 36%;
+  background: linear-gradient(90deg, rgba(147, 51, 234, 0.95), rgba(59, 130, 246, 0.95));
+  border-radius: 9999px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 260ms ease;
+}
+
+.bbMobileLink.isActive .bbMobileLinkUnderline,
+.bbMobileLink:hover .bbMobileLinkUnderline {
+  transform: scaleX(1);
+}
+
+@media (max-width: 860px) {
+  .bbDesktopLinks {
+    display: none;
+  }
+  .bbMobileToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

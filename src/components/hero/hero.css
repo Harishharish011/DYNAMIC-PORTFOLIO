@@ -1,0 +1,53 @@
+/* Galaxy hero styles (kept for backward compatibility, Hero component now renders nothing) */
+
+.heroRoot {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  padding: 5rem 1.25rem;
+}
+
+/* Minimal placeholder styling to keep layout readable */
+.heroProfileWrap,
+.heroText,
+.heroCtas {
+  color: white;
+}
+
+.heroHeading {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.heroTyping {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.heroTypingLabel {
+  opacity: 0.85;
+}
+
+.heroTypingText {
+  font-weight: 700;
+}
+
+.heroCaret {
+  display: inline-block;
+  margin-left: 2px;
+  color: #60a5fa;
+}
+
+/* Keep local button hook styling for hero button affordance */
+.heroBtn {
+  margin-top: 1.25rem;
+}

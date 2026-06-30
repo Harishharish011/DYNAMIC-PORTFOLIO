@@ -1,0 +1,405 @@
+.bbContact {
+  position: relative;
+  padding: calc(var(--section-y) + 72px) 20px var(--section-y);
+  overflow: hidden;
+}
+
+.bbContactInner {
+  position: relative;
+
+  /* Centered composition without centering inner text */
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+}
+
+.bbContactHeroHeader {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1120px;
+}
+
+.bbContactEyebrow--hero {
+  font-size: 12px;
+  letter-spacing: 0.30em;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: rgba(147, 51, 234, 0.9);
+  text-shadow: 0 0 26px rgba(147, 51, 234, 0.18);
+  opacity: 0.98;
+
+  margin-bottom: 14px;
+}
+
+.bbContactHeading--hero {
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: 120px;
+
+  font-size: clamp(2.35rem, 4.8vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+
+  color: rgba(255, 255, 255, 0.98);
+
+  /* center + keep on one line */
+  text-align: center;
+  white-space: nowrap;
+  word-break: keep-all;
+
+  /* sharper premium glow without overpowering */
+  text-shadow:
+    0 0 18px rgba(147, 51, 234, 0.12),
+    0 0 55px rgba(59, 130, 246, 0.07);
+
+  font-weight: 800;
+}
+
+.bbContactSupporting--hero {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 16px;
+  text-align: center;
+
+  color: rgba(203, 213, 225, 0.86);
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+  line-height: 1.75;
+  font-weight: 500;
+
+  /* subtle readability boost on galaxy background */
+  text-shadow: 0 0 28px rgba(59, 130, 246, 0.04);
+}
+
+/* reuse existing base styles for hero variants without redesign */
+.bbContactHeroReveal {
+  display: block;
+}
+
+
+.bbContactCtaWrap--hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bbContactLowerGrid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.bbContactFormCol,
+.bbContactInfoCol {
+  min-width: 0;
+}
+
+.bbContactPanel {
+  width: 100%;
+}
+
+.bbContactFormWrap {
+  width: 100%;
+}
+
+.bbContactBgText {
+  position: absolute;
+  top: 48px;
+
+  /* Slightly offset toward the right and clipped by viewport edges */
+  left: 62%;
+  transform: translateX(-50%);
+
+  width: min(1200px, 160vw);
+
+  text-align: center;
+  font-family: Inter, ui-sans-serif, system-ui;
+  font-size: clamp(7rem, 16vw, 18rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+
+  color: rgba(147, 51, 234, 0.06);
+  text-shadow: 0 0 90px rgba(59, 130, 246, 0.08);
+
+  pointer-events: none;
+  user-select: none;
+
+  /* Helps ensure partial clipping feeling */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bbContactHeader {
+  position: relative;
+  z-index: 1;
+}
+
+
+.bbContactPanel {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.glow-panel {
+  position: relative;
+}
+
+.glow-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    800px circle at 20% 10%,
+    rgba(147, 51, 234, 0.22),
+    transparent 45%
+  );
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.bbContactPanelRow {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 4px;
+}
+
+.bbContactPanelRow:first-child {
+  padding-top: 6px;
+}
+
+.bbContactPanelDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 2px 0;
+}
+
+.bbContactPanelIcon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.10);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  box-shadow: var(--glow-blue);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.bbContactPanelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bbContactPanelLabel {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  color: rgba(59, 130, 246, 0.82);
+}
+
+.bbContactPanelValue {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.bbContactPanelValuePlain {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.bbContactPanelLink {
+  display: block;
+}
+
+.bbContactPanel a.bbContactPanelValue:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  box-shadow: var(--glow-purple-small);
+  border-radius: 10px;
+}
+
+
+/* ---------------------------
+   Contact Form (Premium Glass)
+---------------------------- */
+.bbContactFormWrap {
+  position: relative;
+}
+
+.bbContactForm {
+  padding: 18px;
+}
+
+.bbContactFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bbContactField {
+  min-width: 0;
+}
+
+.bbContactInput,
+.bbContactSelect,
+.bbContactTextarea {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.95);
+
+  padding: 12px 14px;
+  outline: none;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.bbContactInput::placeholder,
+.bbContactTextarea::placeholder {
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.bbContactInput:focus,
+.bbContactSelect:focus,
+.bbContactTextarea:focus {
+  border-color: rgba(147, 51, 234, 0.38);
+  box-shadow: var(--glow-purple-small);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bbContactSelect {
+  appearance: none;
+}
+
+/* Custom select arrow */
+.bbContactSelectWrap {
+  position: relative;
+  width: 100%;
+}
+
+.bbContactSelectWrap::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-35%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(147, 51, 234, 0.95);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.95);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bbContactSelect {
+  padding-right: 44px;
+}
+
+/* Better dark option styling where supported */
+.bbContactSelect option {
+  background: #0b1120;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 10px 12px;
+}
+
+.bbContactTextarea {
+  resize: vertical;
+  min-height: 120px;
+  grid-column: 1 / -1;
+}
+
+.bbContactField--message {
+  grid-column: 1 / -1;
+}
+
+.bbContactFormActions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Responsive */
+
+@media (max-width: 980px) {
+  .bbContact {
+    padding-top: calc(var(--section-y-mobile) + 72px);
+  }
+
+  .bbContactLowerGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* Maintain legacy behavior for other markups */
+  .bbContactSplit {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .bbContactBgText {
+    top: 40px;
+    left: 55%;
+  }
+
+  .bbContactSupporting {
+    max-width: 62ch;
+    font-size: 1rem;
+  }
+
+  .bbContactPanel {
+    padding: 18px;
+  }
+
+  .bbContactFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile/tablet stack order: form first */
+  .bbContactFormCol {
+    order: 1;
+  }
+  .bbContactInfoCol {
+    order: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .bbContact {
+    padding-top: calc(var(--section-y-mobile) + 64px);
+  }
+
+  .bbContactBgText {
+    top: 34px;
+    left: 54%;
+    width: min(1200px, 180vw);
+  }
+
+  .bbContactPanelRow {
+    grid-template-columns: 30px 1fr;
+    gap: 10px;
+  }
+
+  .bbContactForm {
+    padding: 16px;
+  }
+}

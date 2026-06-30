@@ -1,0 +1,278 @@
+.bbAdminRoot {
+  min-height: 100vh;
+  padding: 76px 18px 28px;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.bbAdminShell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 18px;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.bbAdminSidebar,
+.bbAdminTopbar,
+.bbAdminPanel,
+.bbAdminModal {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-glass);
+}
+
+.bbAdminSidebar {
+  position: sticky;
+  top: 86px;
+  align-self: start;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+}
+
+.bbAdminBrand {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.98);
+  margin-bottom: 18px;
+}
+
+.bbAdminNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bbAdminNav a,
+.bbAdminLogout {
+  border: 0;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 12px;
+  padding: 11px 12px;
+  color: rgba(226, 232, 240, 0.84);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.bbAdminNav a.active,
+.bbAdminLogout:hover,
+.bbAdminNav a:hover {
+  color: white;
+  background: rgba(147, 51, 234, 0.18);
+}
+
+.bbAdminMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bbAdminTopbar {
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bbAdminAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(147, 51, 234, 0.24);
+  border: 1px solid rgba(147, 51, 234, 0.28);
+  font-weight: 900;
+}
+
+.bbAdminTopMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bbAdminPageHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bbAdminTitle {
+  margin: 0;
+  font-size: 28px;
+}
+
+.bbAdminMuted {
+  color: var(--color-text-secondary);
+}
+
+.bbAdminGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.bbAdminPanel {
+  border-radius: var(--radius-lg);
+  padding: 18px;
+}
+
+.bbAdminControlsPanel {
+  display: grid;
+  gap: 14px;
+}
+
+.bbAdminStatValue {
+  font-size: 28px;
+  font-weight: 950;
+}
+
+.bbAdminStatLabel {
+  margin-top: 6px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.bbAdminActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bbAdminButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: white;
+  background: linear-gradient(135deg, rgba(147,51,234,0.92), rgba(59,130,246,0.82));
+  cursor: pointer;
+}
+
+.bbAdminButton--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.bbAdminSearch,
+.bbAdminInput,
+.bbAdminTextarea,
+.bbAdminSelect {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 11px 12px;
+}
+
+.bbAdminTextarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.bbAdminForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.bbAdminFormFull {
+  grid-column: 1 / -1;
+}
+
+.bbAdminTableWrap {
+  overflow-x: auto;
+}
+
+.bbAdminTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.bbAdminTable th,
+.bbAdminTable td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bbAdminBadge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(59, 130, 246, 0.16);
+  color: rgba(191, 219, 254, 0.98);
+  font-size: 12px;
+}
+
+.bbAdminOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.bbAdminModal {
+  width: min(980px, 100%);
+  max-height: min(86vh, 900px);
+  overflow: auto;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.bbAdminLogin {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.bbAdminLoginCard {
+  width: min(440px, 100%);
+}
+
+.bbAdminUploader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 980px) {
+  .bbAdminShell,
+  .bbAdminGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bbAdminSidebar {
+    position: static;
+  }
+
+  .bbAdminNav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .bbAdminRoot {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .bbAdminForm {
+    grid-template-columns: 1fr;
+  }
+}

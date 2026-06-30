@@ -1,0 +1,20 @@
+.bbServiceState {
+  width: 100%;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.bbServiceStateTitle {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.bbServiceStateMessage {
+  margin-top: 8px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 14px;
+}
+

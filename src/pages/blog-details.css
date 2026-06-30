@@ -1,0 +1,280 @@
+/* Scoped styles for blog details page */
+
+.bbBlogDetailsRoot {
+  position: relative;
+  padding: 64px 0 88px;
+}
+
+.bbBlogDetailsSection {
+  position: relative;
+}
+
+.bbBlogDetailsBgWord {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 140vw);
+  text-align: center;
+  font-size: clamp(54px, 9.6vw, 126px);
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  color: rgba(147, 51, 234, 0.08);
+  text-shadow: 0 0 90px rgba(59, 130, 246, 0.10);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bbBlogDetailsHero {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 28px;
+  overflow: hidden;
+}
+
+.bbBlogDetailsHeroAccent {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle at 20% 15%, rgba(147, 51, 234, 0.32), transparent 55%),
+    radial-gradient(circle at 75% 55%, rgba(59, 130, 246, 0.22), transparent 58%);
+  filter: blur(28px);
+  opacity: 0.85;
+}
+
+.bbBlogDetailsHeroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bbBlogDetailsHeroMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bbBlogDetailsCategory {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  font-weight: 800;
+  color: rgba(147, 51, 234, 0.85);
+  text-transform: uppercase;
+}
+
+.bbBlogDetailsMetaDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(147, 51, 234, 0.85);
+  box-shadow: var(--glow-purple-small);
+}
+
+.bbBlogDetailsMetaText {
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 13px;
+}
+
+.bbBlogDetailsTitle {
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.bbBlogDetailsSubtitle {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  font-size: 14px;
+  max-width: 78ch;
+}
+
+.bbBlogDetailsAuthorRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.bbBlogDetailsAuthorAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  box-shadow: var(--glow-blue);
+}
+
+.bbBlogDetailsAuthorMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bbBlogDetailsAuthorName {
+  font-weight: 900;
+}
+
+.bbBlogDetailsAuthorRole {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.bbBlogDetailsPublished {
+  margin-left: auto;
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 13px;
+}
+
+.bbBlogDetailsLayout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 26px;
+  margin-top: 26px;
+}
+
+.bbBlogDetailsContentBlock {
+  min-width: 0;
+}
+
+.bbBlogPlaceholderContent {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bbBlogPlaceholderBlock {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bbBlogPlaceholderHeading {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.bbBlogPlaceholderParagraph {
+  margin: 10px 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  font-size: 14px;
+}
+
+.bbBlogDetailsTags {
+  margin-top: 26px;
+}
+
+.bbBlogTagsRow {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bbBlogTag {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(148, 163, 184, 0.92);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.bbBlogDetailsSidebar {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bbBlogDetailsSidebarBlock {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 18px;
+}
+
+.bbBlogDetailsBottomActions {
+  margin-top: 26px;
+}
+
+.bbBlogBackLink {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.bbBlogRelatedPlaceholders {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bbBlogRelatedItem {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.bbBlogDetailsFallback {
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.bbBlogDetailsFallbackTitle {
+  margin: 0;
+  font-size: 22px;
+}
+
+.bbBlogDetailsFallbackText {
+  margin-top: 10px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.bbBlogDetailsFallbackActions {
+  margin-top: 18px;
+}
+
+/* Tablet */
+@media (max-width: 980px) {
+  .bbBlogDetailsLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .bbBlogDetailsPublished {
+    margin-left: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .bbBlogDetailsRoot {
+    padding: 52px 0 76px;
+  }
+
+  .bbBlogDetailsHero {
+    padding: 18px;
+  }
+}
+
