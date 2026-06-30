@@ -5,9 +5,9 @@ declare global {
   namespace Express {
     interface Request {
       user?: JwtPayload;
+      file?: Express.Multer.File | undefined;
     }
   }
 }
 
-export {};
-
+export { };
